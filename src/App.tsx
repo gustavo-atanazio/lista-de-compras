@@ -1,6 +1,11 @@
+import Form from "components/Form";
+
 function App() {
 	return (
-		<div>Lista de compras</div>
+		<main>
+			<h1>Lista de compras</h1>
+			<Form/>
+		</main>
 	);
 }
 
