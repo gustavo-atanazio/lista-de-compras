@@ -1,12 +1,24 @@
 import { useState } from 'react';
 import styles from './Form.module.css';
 
-function Form() {
+interface FormProps {
+    createItem: (name: string, quantity: string) => void
+}
+
+function Form({ createItem }: FormProps) {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
 
+    function addItem(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        createItem(name, quantity);
+
+        setName('');
+        setQuantity('');
+    }
+
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={event => addItem(event)}>
             <div className={styles.form__inputs}>
                 <div>
                     <label htmlFor="name">Nome</label>
