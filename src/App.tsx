@@ -1,15 +1,18 @@
 import { useState } from 'react';
+
 import Form from "components/Form";
-import { Item } from "types/Item";
 import List from 'components/List';
+
+import { removeScript } from 'utils/remove-script';
+import { Item } from "types/Item";
 
 function App() {
 	const [itens, setItens] = useState<Item[]>([]);
 
 	function createItem(name: string, quantity: string) {
 		const item: Item = {
-			name: name,
-			quantity: Number(quantity),
+			name: removeScript(name),
+			quantity: Number(removeScript(quantity)),
 			checked: false,
 			id: crypto.randomUUID()
 		};
