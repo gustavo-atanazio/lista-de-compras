@@ -56,6 +56,17 @@ function App() {
 				checkItem={checkItem}
 				removeItem={removeItem}
 			/>
+
+			{purchasedItens.length > 0 &&
+				<>
+					<h2>Comprados</h2>
+					<List
+						itens={purchasedItens}
+						checkItem={checkItem}
+						removeItem={removeItem}
+					/>
+				</>
+			}
 		</main>
 	);
 }
