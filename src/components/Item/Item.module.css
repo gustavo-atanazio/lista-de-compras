@@ -1,0 +1,25 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.item__info, .item__options {
+    /* This gap is for the item-options */
+    gap: 1rem;
+    display: flex;
+}
+
+.item__info {
+    gap: 3rem;
+}
+
+.item__options input {
+    outline: 0;
+    width: 1rem;
+}
