@@ -2,7 +2,11 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Item as typeItem } from 'types/Item';
 import styles from './Item.module.css';
 
-function Item({ name, quantity, checked }: typeItem) {
+interface ItemProps extends typeItem {
+    removeItem: (id: string) => void
+}
+
+function Item({ name, quantity, checked, id, removeItem }: ItemProps) {
     return (
         <li className={styles.item}>
             <div className={styles.item__info}>
@@ -16,6 +20,7 @@ function Item({ name, quantity, checked }: typeItem) {
                     checked={checked}
                 />
                 <AiOutlineClose
+                    onClick={() => removeItem(id)}
                     size={20}
                     color={'#F00'}
                     cursor={'pointer'}
