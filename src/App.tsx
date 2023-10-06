@@ -21,9 +21,30 @@ function App() {
 		setItens(prevState => [...prevState, item]);
 	}
 
-	function removeItem(id: string) {
-		const newList = itens.filter(item => item.id !== id);
-		setItens(newList);
+	function checkItem(id: string, checked: boolean) {
+		if (!checked) {
+			const item = itens.find(item => item.id === id) as Item;
+			removeItem(item.id, item.checked);
+
+			item.checked = !item.checked;
+			setPurchasedItens(prevState => [...prevState, item]);
+		} else {
+			const item = purchasedItens.find(item => item.id === id) as Item;
+			removeItem(item.id, item.checked);
+
+			item.checked = !item.checked;
+			setItens(prevState => [...prevState, item]);
+		}
+	}
+
+	function removeItem(id: string, checked: boolean) {
+		if (!checked) {
+			const newList = itens.filter(item => item.id !== id);
+			setItens(newList);
+		} else {
+			const newList = purchasedItens.filter(item => item.id !== id);
+			setPurchasedItens(newList);
+		}
 	}
 
 	return (
@@ -32,6 +53,7 @@ function App() {
 			<Form createItem={createItem}/>
 			<List
 				itens={itens}
+				checkItem={checkItem}
 				removeItem={removeItem}
 			/>
 		</main>
