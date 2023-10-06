@@ -3,10 +3,11 @@ import { Item as typeItem } from 'types/Item';
 import styles from './Item.module.css';
 
 interface ItemProps extends typeItem {
-    removeItem: (id: string) => void
+    checkItem: (id: string, checked: boolean) => void
+    removeItem: (id: string, checked: boolean) => void
 }
 
-function Item({ name, quantity, checked, id, removeItem }: ItemProps) {
+function Item({ name, quantity, checked, id, checkItem, removeItem }: ItemProps) {
     return (
         <li className={styles.item}>
             <div className={styles.item__info}>
@@ -17,10 +18,11 @@ function Item({ name, quantity, checked, id, removeItem }: ItemProps) {
             <div className={styles.item__options}>
                 <input
                     type="checkbox"
+                    onChange={() => checkItem(id, checked)}
                     checked={checked}
                 />
                 <AiOutlineClose
-                    onClick={() => removeItem(id)}
+                    onClick={() => removeItem(id, checked)}
                     size={20}
                     color={'#F00'}
                     cursor={'pointer'}
