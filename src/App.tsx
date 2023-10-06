@@ -8,6 +8,7 @@ import { Item } from "types/Item";
 
 function App() {
 	const [itens, setItens] = useState<Item[]>([]);
+	const [purchasedItens, setPurchasedItens] = useState<Item[]>([]);
 
 	function createItem(name: string, quantity: string) {
 		const item: Item = {
