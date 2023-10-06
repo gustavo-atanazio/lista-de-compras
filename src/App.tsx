@@ -20,11 +20,19 @@ function App() {
 		setItens(prevState => [...prevState, item]);
 	}
 
+	function removeItem(id: string) {
+		const newList = itens.filter(item => item.id !== id);
+		setItens(newList);
+	}
+
 	return (
 		<main>
 			<h1>Lista de compras</h1>
 			<Form createItem={createItem}/>
-			<List itens={itens}/>
+			<List
+				itens={itens}
+				removeItem={removeItem}
+			/>
 		</main>
 	);
 }
