@@ -4,15 +4,17 @@ import Item from 'components/Item';
 
 interface ListProps {
     itens: typeItem[]
-    removeItem: (id: string) => void
+    checkItem: (id: string, checked: boolean) => void
+    removeItem: (id: string, checked: boolean) => void
 }
 
-function List({ itens, removeItem }: ListProps) {
+function List({ itens, checkItem, removeItem }: ListProps) {
     return (
         <ul className={styles.item_list}>
             {itens.map(item => (
                 <Item
                     {...item}
+                    checkItem={checkItem}
                     removeItem={removeItem}
                     key={item.id}
                 />
