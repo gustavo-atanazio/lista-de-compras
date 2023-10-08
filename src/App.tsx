@@ -23,17 +23,9 @@ function App() {
 
 	function checkItem(id: string, checked: boolean) {
 		if (!checked) {
-			const item = itens.find(item => item.id === id) as Item;
-			removeItem(item.id, item.checked);
-
-			item.checked = !item.checked;
-			setPurchasedItens(prevState => [...prevState, item]);
+			handleCheck(id, itens, setPurchasedItens);
 		} else {
-			const item = purchasedItens.find(item => item.id === id) as Item;
-			removeItem(item.id, item.checked);
-
-			item.checked = !item.checked;
-			setItens(prevState => [...prevState, item]);
+			handleCheck(id, purchasedItens, setItens);
 		}
 	}
 
@@ -45,6 +37,14 @@ function App() {
 			const newList = purchasedItens.filter(item => item.id !== id);
 			setPurchasedItens(newList);
 		}
+	}
+
+	function handleCheck(id: string, list: Item[], setList: React.Dispatch<React.SetStateAction<Item[]>>) {
+		const item = list.find(item => item.id === id) as Item;
+		removeItem(item.id, item.checked);
+
+		item.checked = !item.checked;
+		setList(prevState => [...prevState, item]);
 	}
 
 	return (
