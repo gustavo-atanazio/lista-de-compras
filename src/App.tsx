@@ -51,11 +51,13 @@ function App() {
 		<main>
 			<h1>Lista de compras</h1>
 			<Form createItem={createItem}/>
-			<List
-				itens={itens}
-				checkItem={checkItem}
-				removeItem={removeItem}
-			/>
+			{itens.length > 0 &&
+				<List
+					itens={itens}
+					checkItem={checkItem}
+					removeItem={removeItem}
+				/>
+			}
 
 			{purchasedItens.length > 0 &&
 				<>
