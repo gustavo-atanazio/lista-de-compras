@@ -9,8 +9,10 @@ interface ListProps {
 }
 
 function List({ itens, checkItem, removeItem }: ListProps) {
+    const hasChecked = itens.some(item => item.checked);
+
     return (
-        <ul className={styles.item_list}>
+        <ul className={`${styles.item_list} ${hasChecked ? styles.purchased_list : ''}`}>
             {itens.map(item => (
                 <Item
                     {...item}
