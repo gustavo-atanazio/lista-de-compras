@@ -14,7 +14,7 @@
 Este é uma aplicação feita para auxiliar os usuários na organização da sua lista de compras. Ela oferece uma interface simples e intuitiva para adicionar, marcar como comprado ou excluir itens sem maiores problemas.
 
 ## 🚀 Testando o projeto
-Você pode testar o projeto diretamente por este [link](), mas caso queira rodá-lo localmente em sua máquina, siga os passos abaixo:
+Você pode testar o projeto diretamente por este [link](https://lista-de-compras-beryl-omega.vercel.app/), mas caso queira rodá-lo localmente em sua máquina, siga os passos abaixo:
 
 1. Baixe o arquivo .zip do repositório
     - Vá no botão com texto "Code", no início do repositório, e selecione "Download ZIP"
