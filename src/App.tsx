@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Form from "components/Form";
 import List from 'components/List';
@@ -7,8 +7,8 @@ import { removeScript } from 'utils/remove-script';
 import { Item } from "types/Item";
 
 function App() {
-	const [itens, setItens] = useState<Item[]>([]);
-	const [purchasedItens, setPurchasedItens] = useState<Item[]>([]);
+	const [itens, setItens] = useState<Item[]>(getFromLocalStorage('ITENS'));
+	const [purchasedItens, setPurchasedItens] = useState<Item[]>(getFromLocalStorage('PURCHASED_ITENS'));
 
 	function createItem(name: string, quantity: string) {
 		const item: Item = {
@@ -46,6 +46,17 @@ function App() {
 		item.checked = !item.checked;
 		setList(prevState => [...prevState, item]);
 	}
+
+	function getFromLocalStorage(key: string) {
+		const ITENS = localStorage.getItem(key);
+		if (ITENS) return JSON.parse(ITENS);
+		else return [];
+	}
+
+	useEffect(() => {
+		localStorage.setItem('ITENS', JSON.stringify(itens));
+		localStorage.setItem('PURCHASED_ITENS', JSON.stringify(purchasedItens));
+	}, [itens, purchasedItens]);
 
 	return (
 		<main>
