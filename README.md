@@ -1,27 +1,36 @@
-# React + TypeScript + Vite
+<h1 align='center'>Lista de compras</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align='center'>
+  <img src='' width='350px'/>
+</div>
 
-Currently, two official plugins are available:
+<div align='center'>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Conecte-se comigo! 🤝
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gustavo-atanazio)
+</div>
 
-## Expanding the ESLint configuration
+## 📘 Sobre o projeto
+Este é uma aplicação feita para auxiliar os usuários na organização da sua lista de compras. Ela oferece uma interface simples e intuitiva para adicionar, marcar como comprado ou excluir itens sem maiores problemas.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Testando o projeto
+Você pode testar o projeto diretamente por este [link](), mas caso queira rodá-lo localmente em sua máquina, siga os passos abaixo:
 
-- Configure the top-level `parserOptions` property like this:
+1. Baixe o arquivo .zip do repositório
+    - Vá no botão com texto "Code", no início do repositório, e selecione "Download ZIP"
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+2. Extraindo
+    - Após baixar, mova o arquivo para a pasta desejada e faça a extração na mesma
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Baixando dependências
+    - Abra a pasta em um editor de código e, no terminal integrado, rode o comando `npm install`. Isso irá realizar a instalação dos pacotes necessários para rodar a aplicação
+
+4. Rodando a aplicação
+    - Após baixar as dependências, rode o comando `npm start` no terminal. Isso irá iniciar um servidor na sua própria máquina, possibilitando executar todo o código
+
+Nota: Para realizar os passos citados, você precisará baixar o [Node.js](https://nodejs.org/pt-br) e um editor de código.
+
+## 🔨 Ferramentas usadas
+- [React](https://pt-br.react.dev/learn) + [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- CSS
