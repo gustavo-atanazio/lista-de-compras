@@ -1,7 +1,7 @@
 <h1 align='center'>Lista de compras</h1>
 
 <div align='center'>
-  <img src='https://github.com/gustavo-atanazio/lista-de-compras/assets/124182846/65c48da3-6fa1-4cc7-9940-338a48d7e518' width='750px'/>
+  <img src='https://github.com/gustavo-atanazio/lista-de-compras/assets/124182846/8f0df742-98dd-41b3-a39f-21aa863f6b5c' width='750px'/>
 </div>
 
 <div align='center'>
