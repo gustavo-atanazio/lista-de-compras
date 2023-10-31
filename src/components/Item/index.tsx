@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Item as typeItem } from 'types/Item';
 import styles from './Item.module.css';
@@ -32,4 +33,4 @@ function Item({ name, quantity, checked, id, checkItem, removeItem }: ItemProps)
     );
 }
 
-export default Item;
+export default memo(Item);
