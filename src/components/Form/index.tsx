@@ -1,11 +1,10 @@
 import { useState } from 'react';
+import { useItemsContext } from 'context/Items';
 import styles from './Form.module.css';
 
-interface FormProps {
-    createItem: (name: string, quantity: string) => void
-}
+function Form() {
+    const { createItem } = useItemsContext();
 
-function Form({ createItem }: FormProps) {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
 

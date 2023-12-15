@@ -1,14 +1,12 @@
 import { memo } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useItemsContext } from 'context/Items';
 import { Item as typeItem } from 'types/Item';
 import styles from './Item.module.css';
 
-interface ItemProps extends typeItem {
-    checkItem: (id: string, checked: boolean) => void
-    removeItem: (id: string, checked: boolean) => void
-}
+function Item({ name, quantity, checked, id }: typeItem) {
+    const { checkItem, removeItem } = useItemsContext();
 
-function Item({ name, quantity, checked, id, checkItem, removeItem }: ItemProps) {
     return (
         <li className={styles.item}>
             <div className={styles.item__info}>
@@ -22,6 +20,7 @@ function Item({ name, quantity, checked, id, checkItem, removeItem }: ItemProps)
                     onChange={() => checkItem(id, checked)}
                     checked={checked}
                 />
+                
                 <AiOutlineClose
                     onClick={() => removeItem(id, checked)}
                     size={20}

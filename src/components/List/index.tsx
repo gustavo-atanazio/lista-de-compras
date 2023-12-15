@@ -1,23 +1,19 @@
+import Item from 'components/Item';
 import { Item as typeItem } from 'types/Item';
 import styles from './List.module.css';
-import Item from 'components/Item';
 
 interface ListProps {
-    itens: typeItem[]
-    checkItem: (id: string, checked: boolean) => void
-    removeItem: (id: string, checked: boolean) => void
+    items: typeItem[]
 }
 
-function List({ itens, checkItem, removeItem }: ListProps) {
-    const hasChecked = itens.some(item => item.checked);
+function List({ items }: ListProps) {
+    const hasChecked = items.some(item => item.checked);
 
     return (
         <ul className={`${styles.item_list} ${hasChecked ? styles.purchased_list : ''}`}>
-            {itens.map(item => (
+            {items.map(item => (
                 <Item
                     {...item}
-                    checkItem={checkItem}
-                    removeItem={removeItem}
                     key={item.id}
                 />
             ))}
