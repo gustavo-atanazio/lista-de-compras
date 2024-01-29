@@ -8,6 +8,7 @@
 body {
     background-color: #4477CE;
     min-height: 100vh;
+    min-height: 100dvh;
     height: 100%;
 }
 
