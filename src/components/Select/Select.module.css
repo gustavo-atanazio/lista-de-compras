@@ -1,0 +1,13 @@
+.select {
+    outline: 0;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 60%;
+}
+
+@media (min-width: 768px) {
+    .select {
+        width: 50%;
+    }
+}

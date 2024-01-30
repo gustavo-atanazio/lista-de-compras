@@ -31,3 +31,10 @@ main {
 main h1, main h2 {
     color: #EEE;
 }
+
+main .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

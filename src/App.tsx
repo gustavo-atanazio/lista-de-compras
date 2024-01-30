@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import Form from 'components/Form';
 import List from 'components/List';
+import Select from 'components/Select';
 
 import { useItemsContext } from 'context/Items';
 
@@ -16,9 +17,19 @@ function App() {
 	return (
 		<main>
 			<h1>Lista de compras</h1>
+
 			<Form/>
+			
 			{items.length > 0 &&
-				<List items={items}/>
+				<>
+					<div className='wrapper'>
+						<h2>Itens</h2>
+
+						<Select/>
+					</div>
+
+					<List items={items}/>
+				</>
 			}
 
 			{purchasedItems.length > 0 &&

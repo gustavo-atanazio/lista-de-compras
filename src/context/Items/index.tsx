@@ -11,6 +11,7 @@ interface ItemsContextType {
     createItem: (name: string, quantity: string) => void
     checkItem: (id: string, checked: boolean) => void
     removeItem: (id: string, checked: boolean) => void
+    orderItems: (orderBy: string) => void
 }
 
 const initialValue = {
@@ -18,7 +19,8 @@ const initialValue = {
     purchasedItems: [],
     createItem: () => {},
     checkItem: () => {},
-    removeItem: () => {}
+    removeItem: () => {},
+    orderItems: () => {}
 };
 
 const ItemsContext = createContext<ItemsContextType>(initialValue);
@@ -64,12 +66,32 @@ function ItemsContextProvider({ children }: { children: React.ReactNode }) {
 		}
 	}
 
+    function orderItems(orderBy: string) {
+        const itemsCopy = [...items];
+
+        switch (orderBy.toUpperCase()) {
+            case 'NAME':
+                itemsCopy.sort((a, b) => a.name.localeCompare(b.name));
+                break;
+
+            case 'QUANTITY':
+                itemsCopy.sort((a, b) => a.quantity - b.quantity);
+                break;
+
+            default:
+                return;
+        }
+
+        setItems(itemsCopy);
+    }
+
     const value = {
         items,
         purchasedItems,
         createItem,
         checkItem,
-        removeItem
+        removeItem,
+        orderItems
     };
 
     return (
@@ -83,8 +105,4 @@ function useItemsContext() {
     return useContext(ItemsContext);
 }
 
-export {
-    ItemsContext,
-    ItemsContextProvider,
-    useItemsContext
-};
+export { ItemsContext, ItemsContextProvider, useItemsContext };
