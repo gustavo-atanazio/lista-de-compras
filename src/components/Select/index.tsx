@@ -13,6 +13,7 @@ function Select() {
     return (
         <ReactSelect
             options={options}
+            isSearchable={false}
             placeholder='Ordenar por...'
             className={styles.select}
             onChange={event => event && orderItems(event.value)}
