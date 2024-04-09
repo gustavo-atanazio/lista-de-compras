@@ -21,7 +21,7 @@
     "react-icons": "^4.11.0",
     "typescript": "^5.0.2",
     "typescript-plugin-css-modules": "^5.0.1",
-    "vite": "^4.4.5",
+    "vite": "^5.2.8",
     "vite-tsconfig-paths": "^4.2.1"
   }
 }
